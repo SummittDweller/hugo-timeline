@@ -1,6 +1,7 @@
 {{ partial "console-log" "--- Start of hugo-timeline-li-event.html ---" }}
 {{ $now := now.Unix }}   {{/* Returns current number of seconds since the Unix epoch */}}
 {{ $msg := "" }}
+{{ $discrete := "" }}
 
 {{/* ---------- Fetch partial parameters from dict ---------- */}}
 {{ $event := .event }}
@@ -11,7 +12,7 @@
 {{ partial "console-log" . }}
 
 {{/* ---------- Constants -- */}}
-{{ $minEventHeight := 24.0 }}
+{{ $minEventHeight := 20.0 }}
 {{ $secondsPerMonth := 2628288.0 }}
 {{/* 60 * 60 * 24 * 30.42. It must be be a float (end with .0) so div doesn't floor the result */}}
 
@@ -38,6 +39,7 @@
   {{ else }}
     {{ $secondsPerQuarter := div $secondsPerMonth 4 }}
     {{ $from = sub $to $secondsPerQuarter }}  
+    {{ $discrete = "discrete"}}
   {{ end }}
 {{ end }}  
 
@@ -132,7 +134,7 @@ height: to - from ( / sPerMonth * pxPerMonth )
 {{ partial "console-log" (dict "$height" $height) }}
 
 {{/* ---------- Where the rubber meets the road ---------- */}}
-<li class="event" tabindex="0"
+<li class="event {{ $discrete -}}" tabindex="0"
     style="top: {{- $top -}}px; height: {{- $height -}}px; min-height: {{- $height -}}px;" title="{{ $event.name }}: {{$dateDisplay}} ({{$duration}})">
   <div class="title">{{ $event.name | markdownify }}</div>
   <div class="description">{{ $event.description | markdownify }}</div>
