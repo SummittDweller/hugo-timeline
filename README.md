@@ -61,3 +61,7 @@ Common Jekyll to Hugo changes...
 
 I made all of the above changes, and many more, using _VSCode_ to edit the source.
 
+## Packaged as a Hugo (Go) Module
+
+I used the guidance posted in [Hugo Modules: Getting Started](https://scripter.co/hugo-modules-getting-started/) to make a first distribution of this repo's components as a [Hugo module](https://gohugo.io/hugo-modules/).
+
