@@ -27,6 +27,8 @@ I maintain an example timeline rendered in my personal blog at https://blog.summ
   - Timeline granularity is per month, and it always displayed by full January-to-December years. For example: front matter values of `startYear: 2017` and `endYear:2021` would create a timeline that spans from January 2017, to December 2021.  If the `endYear` parameter is omitted the timeline would span from January 2017 until the end of the current year, at the time of this writing that's December 2022.  
   - Events may be discrete (a single `to` date with no `from`) or they may have duration with both a `from` and `to` start and end date/time.  
   - In an event, if a `from` date is specified with no `to` date, the event is assumed to be "current" and its top will always be the current month.
+  - If an event `link` is provided, clicking on the `name`/title of the event will open the linked site/page in a new tab using the `target=_blank` attribute. 
+  - Clicking on any portion of an event other than the `name`/title, if a `link` is provided, will expand the event listing so that the entire `description` is visible.
 
 ## History
 
