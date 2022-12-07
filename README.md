@@ -65,3 +65,17 @@ I made all of the above changes, and many more, using _VSCode_ to edit the sourc
 
 I used the guidance posted in [Hugo Modules: Getting Started](https://scripter.co/hugo-modules-getting-started/) to make a first distribution of this repo's components as a [Hugo module](https://gohugo.io/hugo-modules/).
 
+### Applying Module Updates
+
+Keep this module current in your projects by updating them using:
+
+```
+hugo mod get -u github.com/SummittDweller/hugo-timeline
+```
+...or to update ALL Hugo modules...
+
+```
+hugo mod get -u 
+```
+
+
