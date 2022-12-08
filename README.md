@@ -18,10 +18,10 @@ I maintain an example timeline rendered in my personal blog at https://blog.summ
 
 ## Features
 
-  - The timeline is rendered from a _Hugo_ shortcode, so it is essentially "called" from within any page by placing a `{{% timeline %}}` reference in the page's Markdown (`.md`) file.
+  - The timeline is rendered from a _Hugo_ shortcode, so it is essentially "called" from within any page by placing a `{{% hugp-timeline "." %}}` reference in the page's Markdown (`.md`) file.
   - The can be only one timeline per page, but you can have an unlimited number of timelines in any given site.
-  - The timeline "grid" and events displayed in the timeline are governed by front matter metadata in the aforementioned page `.md` file.
-  - Each timeline is rendered in reverse chronological order, with most recent events at the top of the graph.
+  - The timeline "grid", and events displayed in the timeline, are governed by front matter metadata in the aforementioned `.md` file.
+  - Each timeline is rendered in reverse chronological order, with the most recent event at the top of the graph.
   - Each timeline can display between 1 to 5 columns of events.  The number of columns is also determined in the page's `.md` file, so there is no fixed number of colums per site.
   - The timeline must have a specifed `startYear` in the `.md` front matter, and it may have an optional `endYear`.  If no `endYear` front matter is provided the timeline will be "current", ending with December of the current year. 
   - Timeline granularity is per month, and it always displayed by full January-to-December years. For example: front matter values of `startYear: 2017` and `endYear:2021` would create a timeline that spans from January 2017, to December 2021.  If the `endYear` parameter is omitted the timeline would span from January 2017 until the end of the current year, at the time of this writing that's December 2022.  
