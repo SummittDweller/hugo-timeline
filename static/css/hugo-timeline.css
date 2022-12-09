@@ -30,7 +30,9 @@
     width: 100%;
     left: 0;
     box-sizing: border-box;
-    border-bottom: 1px solid #d9d9d9; }
+    border-bottom: 1px solid #d9d9d9; 
+    margin-top: 30px;    /* offset added for alignment by Michael O'Connor 9=Dec-2022 */
+  }
   .hugoTimeline .inner b label {
     position: absolute;
     top: 50%;
@@ -181,6 +183,8 @@ body {
   .timeline-examples img {
     max-width: 100%; }
 
+
+ /* MAM adding class for discrete (single date, no duration) events */   
 .discrete {
   border-top: 3px solid black; 
   width: 100% !important;
