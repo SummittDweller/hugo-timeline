@@ -32,9 +32,11 @@
 {{ partial "console-log" (dict "$monthHeight" $monthHeight) }}
 
 {{/* ---------- Calculate representations for $endYear-Dec-31 ---------- */}}
-{{ $endYearText := printf "%d-12-31T23:59:59-06:00" $endYear }}
+{{/* $endYearText := printf "%d-12-31T23:59:59-06:00" $endYear */}}
+{{ $endYearText := printf "%d-12-31T23:59:59" $endYear }}
 {{ $topUnix := ($endYearText | time).Unix }}
-{{ $startYearText := printf "%d-01-01T00:00:00-06:00" $startYear }}
+{{/* $startYearText := printf "%d-01-01T00:00:00-06:00" $startYear */}}
+{{ $startYearText := printf "%d-01-01T00:00:00" $startYear }}
 {{ $botUnix := ($startYearText | time).Unix }}
 
 {{ partial "console-log" (dict "$endYearText" $endYearText) }}
