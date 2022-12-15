@@ -184,9 +184,14 @@ body {
     max-width: 100%; }
 
 
- /* MAM adding class for discrete (single date, no duration) events */   
+/* MAM adding class for discrete (single date, no duration) events */   
 .discrete {
   border-top: 3px solid black; 
   width: 100% !important;
   margin-left: 0 !important; }
+
+/* MAM reducing .description margins */
+.description {
+  margin-left: 3px !important;
+}  
 
