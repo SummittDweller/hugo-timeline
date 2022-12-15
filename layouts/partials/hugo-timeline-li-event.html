@@ -17,13 +17,11 @@
 {{/* 60 * 60 * 24 * 30.42. It must be be a float (end with .0) so div doesn't floor the result */}}
 
 {{/* ---------- Offset from top because we always draw a full year --- */}}
-{{/*  
-{{ $curMonth := int (printf "%d" now.Month) }}
-{{ $monthOffset := sub 12 $curMonth }} 
+{{/* $curMonth := int (printf "%d" now.Month) */}}
+{{/* $monthOffset := sub 12 $curMonth */}} 
 
-{{ partial "console-log" (dict "$curMonth" $curMonth) }}
-{{ partial "console-log" (dict "SmonthOffset" $monthOffset) }}  
-*/}}
+{{/* partial "console-log" (dict "$curMonth" $curMonth) */}}
+{{/* partial "console-log" (dict "SmonthOffset" $monthOffset) */}}  
 
 {{/* ---------- Default values for to and from --- */}}
 {{ $to := $topUnix }}
@@ -113,10 +111,7 @@
 {{ end }}
 
 {{/* ---------- Set top position and height --- */}}
-{{/*
-top: topUnix - to ( / sPerMonth * pxPerMonth )
-height: to - from ( / sPerMonth * pxPerMonth )
-*/}}
+{{/* top: topUnix - to ( / sPerMonth * pxPerMonth )  height: to - from ( / sPerMonth * pxPerMonth ) */}}
 
 {{ $eventAge := div (sub $topUnix $to) $secondsPerMonth }}
 {{ $top := mul $eventAge $pxPerMonth }}
