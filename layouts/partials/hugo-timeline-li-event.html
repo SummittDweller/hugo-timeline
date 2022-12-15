@@ -133,7 +133,7 @@
 <li class="event {{ $discrete -}}" tabindex="0"
     style="top: {{- $top -}}px; height: {{- $height -}}px; min-height: {{- $height -}}px;" title="{{ $event.name }}: {{$dateDisplay}} ({{$duration}})">
   {{ if $event.link }}
-    <a href="{{ $event.link | safeHTML }}" target="_blank"><div class="title">{{ $event.name | markdownify }}</div></a>
+    <div class="title"><a href="{{ $event.link | safeHTML }}" target="_blank">{{ $event.name | markdownify }}</a></div>
   {{ else }}  
     <div class="title">{{ $event.name | markdownify }}</div>
   {{ end }}
