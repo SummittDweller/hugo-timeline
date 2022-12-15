@@ -11,10 +11,9 @@
   {{ $endYear = $.Page.Params.endYear }}
 {{ end }}
 
+{{ $minEventHeight := int 24 }}
 {{ if $.Page.Params.minEventHeight }}
-  {{ $minEventHeight = $.Page.Params.minEventHeight }}
-{{ else }}  
-  {{ $minEventHeight = 24 }}
+  {{ $minEventHeight = int $.Page.Params.minEventHeight }}
 {{ end }}
 {{ partial "console-log" (dict "$minEventHeight" $minEventHeight) }}
 
