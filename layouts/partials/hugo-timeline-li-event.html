@@ -8,11 +8,12 @@
 {{ $pxPerMonth := .pxPerMonth }}
 {{ $topUnix := .topUnix }}   {{/* top of the timeline as Unix (Epoch) seconds */}}
 {{ $botUnix := .botUnix }}   {{/* bottom of the timeline as Unix (Epoch) seconds */}}
+{{ $minEventHeight := .minEventHeight }}   {{/* minimum event height in pixels from front matter */}}
 {{ partial "console-log" (dict "$event.name" $event.name) }}
 {{ partial "console-log" . }}
 
 {{/* ---------- Constants -- */}}
-{{ $minEventHeight := 26.0 }}
+{{/* $minEventHeight := 40 */}}
 {{ $secondsPerMonth := 2628288.0 }}
 {{/* 60 * 60 * 24 * 30.42. It must be be a float (end with .0) so div doesn't floor the result */}}
 

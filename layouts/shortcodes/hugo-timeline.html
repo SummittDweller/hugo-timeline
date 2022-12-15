@@ -11,6 +11,13 @@
   {{ $endYear = $.Page.Params.endYear }}
 {{ end }}
 
+{{ if $.Page.Params.minEventHeight }}
+  {{ $minEventHeight = $.Page.Params.minEventHeight }}
+{{ else }}  
+  {{ $minEventHeight = 24 }}
+{{ end }}
+{{ partial "console-log" (dict "$minEventHeight" $minEventHeight) }}
+
 {{ $heightPx := int $.Page.Params.heightPx }}
 {{ partial "console-log" (dict "$heightPx" $heightPx) }}
 
@@ -72,7 +79,7 @@
       <ol class="col col1" {{ if $.Page.Params.col1.width }} style="flex-basis:{{$.Page.Params.col1.width}}px" {{ end }} >
         <li class="colTitle"><span>{{ $.Page.Params.col1.title }}</span></li>
         {{ range $event := $.Page.Params.col1.events }}
-          {{ partial "hugo-timeline-li-event.html" (dict "event" . "pxPerMonth" $monthHeight "topUnix" $topUnix "botUnix" $botUnix) }}
+          {{ partial "hugo-timeline-li-event.html" (dict "event" . "pxPerMonth" $monthHeight "topUnix" $topUnix "botUnix" $botUnix "minEventHeight" $minEventHeight) }}
         {{ end }}
       </ol>
     {{ end }}
@@ -82,7 +89,7 @@
       <ol class="col col2" {{ if $.Page.Params.col2.width }} style="flex-basis:{{$.Page.Params.col2.width}}px" {{ end }} >
         <li class="colTitle"><span>{{ $.Page.Params.col2.title }}</span></li>
         {{ range $event := $.Page.Params.col2.events }}
-          {{ partial "hugo-timeline-li-event.html" (dict "event" . "pxPerMonth" $monthHeight "topUnix" $topUnix "botUnix" $botUnix) }}
+          {{ partial "hugo-timeline-li-event.html" (dict "event" . "pxPerMonth" $monthHeight "topUnix" $topUnix "botUnix" $botUnix "minEventHeight" $minEventHeight) }}
         {{ end }}
       </ol>
     {{ end }}
@@ -92,7 +99,7 @@
       <ol class="col col3" {{ if $.Page.Params.col3.width }} style="flex-basis:{{$.Page.Params.col3.width}}px" {{ end }} >
         <li class="colTitle"><span>{{ $.Page.Params.col3.title }}</span></li>
         {{ range $event := $.Page.Params.col3.events }}
-          {{ partial "hugo-timeline-li-event.html" (dict "event" . "pxPerMonth" $monthHeight "topUnix" $topUnix "botUnix" $botUnix) }}
+          {{ partial "hugo-timeline-li-event.html" (dict "event" . "pxPerMonth" $monthHeight "topUnix" $topUnix "botUnix" $botUnix "minEventHeight" $minEventHeight) }}
         {{ end }}
       </ol>
     {{ end }}
@@ -102,7 +109,7 @@
       <ol class="col col4" {{ if $.Page.Params.col4.width }} style="flex-basis:{{$.Page.Params.col4.width}}px" {{ end }} >
         <li class="colTitle"><span>{{ $.Page.Params.col4.title }}</span></li>
         {{ range $event := $.Page.Params.col4.events }}
-          {{ partial "hugo-timeline-li-event.html" (dict "event" . "pxPerMonth" $monthHeight "topUnix" $topUnix "botUnix" $botUnix) }}
+          {{ partial "hugo-timeline-li-event.html" (dict "event" . "pxPerMonth" $monthHeight "topUnix" $topUnix "botUnix" $botUnix "minEventHeight" $minEventHeight) }}
         {{ end }}
       </ol>
     {{ end }}
@@ -112,7 +119,7 @@
       <ol class="col col5" {{ if $.Page.Params.col5.width }} style="flex-basis:{{$.Page.Params.col5.width}}px" {{ end }} >
         <li class="colTitle"><span>{{ $.Page.Params.col5.title }}</span></li>
         {{ range $event := $.Page.Params.col5.events }}
-          {{ partial "hugo-timeline-li-event.html" (dict "event" . "pxPerMonth" $monthHeight "topUnix" $topUnix "botUnix" $botUnix) }}
+          {{ partial "hugo-timeline-li-event.html" (dict "event" . "pxPerMonth" $monthHeight "topUnix" $topUnix "botUnix" $botUnix "minEventHeight" $minEventHeight) }}
         {{ end }}
       </ol>
     {{ end }}
