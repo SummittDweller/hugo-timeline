@@ -80,4 +80,22 @@ hugo mod get -u github.com/SummittDweller/hugo-timeline
 hugo mod get -u 
 ```
 
+## Issues
 
+### Control adjacent event visibility or "depth" with CSS z-index
+- https://github.com/SummittDweller/hugo-timeline/issues/2
+
+I solved this issue without need for a `z-index`.  The key is this default CSS behavior: `If two positioned elements overlap without a z-index specified, the element positioned last in the HTML code will be shown on top. `
+
+So in the `hugo-timeline.html` shortcode I changed this line...
+
+```
+        {{ range $event := $.Page.Params.col1.events }}
+```
+...to this...
+
+```
+        {{ range $event := sort $.Page.Params.col1.events "to" "desc" }}
+```
+
+I did the same for all other columns.  Now the events sort correctly such that their default placement has the desired effect with the oldest events floating to the "top" of the stack so their titles and descriptions remain visible.
